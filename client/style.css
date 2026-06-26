@@ -28,29 +28,33 @@ h1{
     padding:15px;
 }
 
-#chat-box{
-    height:400px;
-    overflow-y:auto;
-    padding:15px;
-    background:#fafafa;
+#chat-box {
+    height: 400px;
+    overflow-y: auto; /* Adds a scrollbar when messages overflow */
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.message{
-    padding:10px;
-    margin:10px 0;
-    border-radius:8px;
-    max-width:75%;
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
 }
 
-.user{
-    background:#4f46e5;
-    color:white;
-    margin-left:auto;
+.user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end; /* Pushes bubble to the right */
 }
 
-.ai{
-    background:#e5e7eb;
-    color:black;
+.ai-message {
+    background-color: #f1f0f0;
+    color: black;
+    align-self: flex-start; /* Keeps bubble to the left */
 }
 
 .input-area{

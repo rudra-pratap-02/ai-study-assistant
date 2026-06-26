@@ -1,6 +1,5 @@
 const sendBtn = document.getElementById("send-btn");
 const userInput = document.getElementById("user-input");
-const chatBox = document.getElementById("chat-box");
 
 sendBtn.addEventListener("click", sendMessage);
 
@@ -31,5 +30,25 @@ function sendMessage() {
     userInput.value = "";
 
     // Auto-scroll
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+const chatBox = document.getElementById('chat-box');
+
+// Helper function to append messages into the DOM
+function appendMessage(text, sender) {
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    
+    if (sender === 'user') {
+        messageElement.classList.add('user-message');
+    } else {
+        messageElement.classList.add('ai-message');
+    }
+    
+    messageElement.innerText = text;
+    chatBox.appendChild(messageElement);
+    
+    // Auto-scroll to the bottom of the chat
     chatBox.scrollTop = chatBox.scrollHeight;
 }
